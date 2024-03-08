@@ -5,7 +5,7 @@ export type Maybe<T> = T | null | undefined;
 export type Nullish = null | undefined;
 
 /** A function that indicates something about value passed in to it */
-export type Predicate<T> = (x: T) => boolean;
+export type Predicate<T = unknown> = (x: T) => boolean;
 
 /** A function that narrows the type of value passed in to it */
 export type TypePredicate<T, U extends T> = (x: T) => x is U;
@@ -17,7 +17,7 @@ export type TypePredicate<T, U extends T> = (x: T) => x is U;
  */
 export type TemplateTag<T = string> = (
   template: TemplateStringsArray,
-  ...substitutions: unknown[]
+  ...substitutions: any[]
 ) => T;
 
 /** A parsed JSON value */
