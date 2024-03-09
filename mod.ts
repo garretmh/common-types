@@ -2,7 +2,7 @@
 export type Maybe<T> = T | null | undefined;
 
 /** A nullish value is either null or undefined */
-export type Nullish = null | undefined;
+export type Nullish<T = null | undefined> = Exclude<T, {}>;
 
 /** A function that indicates something about value passed in to it */
 export type Predicate<T = unknown> = (x: T) => boolean;
